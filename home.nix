@@ -16,6 +16,7 @@
 		pkgs.thefuck
 		pkgs.fzf
 		pkgs.bitwarden
+		pkgs.eww
 		# (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 	];
 
