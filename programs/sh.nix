@@ -11,15 +11,14 @@
 			theme = "";
 		};
 		shellAliases = {
-			l = "eza -l --icons --tree --level=1";
-			l2 = "eza -l --icons --tree --level=2";
-			la = "eza -l --icons --tree --level=1 --all";
-			lg = "eza -l --icons --tree --level=1 | grep ";
+			l  = "eza -l --icons --tree --level=1 --group-directories--first";
+			l2 = "eza -l --icons --tree --level=2 --group-directories--first";
+			la = "eza -l --icons --tree --level=1 --group-directories--first--all";
+			lg = "eza -l --icons --tree --level=1 --group-directories--first | grep ";
 
 			n = "nvim ";
 			q = "exit";
 		};
 	};
 	programs.starship.enable = true;
-
 }
