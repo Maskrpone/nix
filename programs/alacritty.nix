@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 {
 	programs.alacritty = {
+		import = [ "../extras/onedark.toml" ];
 		enable = true;
 		settings = {
 			env.TERM = "xterm-256color";
