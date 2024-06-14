@@ -5,6 +5,8 @@
 	home.username = "maskrpone";
 	home.homeDirectory = "/home/maskrpone";
 
+	nixpkgs.config.allowUnfree = true;
+
 	home.packages = [
 		pkgs.eza
 		pkgs.thefuck

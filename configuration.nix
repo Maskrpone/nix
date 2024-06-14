@@ -63,6 +63,7 @@
     description = "Maskrpone";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+    	minecraft
     	swww
 	vscode
     	discord

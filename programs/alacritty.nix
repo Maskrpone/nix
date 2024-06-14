@@ -3,7 +3,7 @@
 	programs.alacritty = {
 		enable = true;
 		settings = {
-			import = [ "../extras/onedark.toml" ];
+			import = [ "~/.nix/extras/onedark.toml" ];
 
 			env.TERM = "xterm-256color";
 
