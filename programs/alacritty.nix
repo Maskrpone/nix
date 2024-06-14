@@ -1,10 +1,12 @@
 { config, lib, pkgs, ... }:
 {
 	programs.alacritty = {
-		import = [ "../extras/onedark.toml" ];
 		enable = true;
 		settings = {
+			import = [ "../extras/onedark.toml" ];
+
 			env.TERM = "xterm-256color";
+
 			window = {
 				opacity = 1;
 				padding = {
@@ -13,6 +15,7 @@
 				};
 				decorations = "None";
 			};
+
 			font = {
 				normal = {
 					family = "Hack Nerd Font Mono";
