@@ -5,12 +5,17 @@
 	home.username = "maskrpone";
 	home.homeDirectory = "/home/maskrpone";
 
-	nixpkgs.config.allowUnfree = true;
+	nixpkgs.config = {
+		allowUnfree = true;
+		allowBroken = true;
+	};
 
 	home.packages = [
 		pkgs.eza
+		pkgs.gnome.nautilus
 		pkgs.thefuck
 		pkgs.fzf
+		pkgs.bitwarden
 		# (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 	];
 

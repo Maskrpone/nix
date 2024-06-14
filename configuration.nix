@@ -16,6 +16,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
@@ -63,7 +67,6 @@
     description = "Maskrpone";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    	minecraft
     	swww
 	vscode
     	discord
@@ -75,6 +78,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowBroken = true;
 
   # Enable flakes on the system
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
