@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-	imports = [ ./sh.nix ];
+	imports = [ ./programs ];
 
 	home.username = "maskrpone";
 	home.homeDirectory = "/home/maskrpone";
