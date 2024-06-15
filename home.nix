@@ -21,7 +21,10 @@
 		pkgs.bitwarden
     pkgs.gcc
     pkgs.tree-sitter
+    pkgs.eww
     pkgs.nodejs
+    pkgs.python3
+    pkgs.unzip
 		# (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 	];
 

@@ -83,11 +83,17 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment.systemPackages = with pkgs; [
-     neovim 
+     neovim
      git
      wget
      curl
+     gnome.gnome-keyring
+     psmisc
   ];
+
+  services = {
+      gnome.gnome-keyring.enable = true;
+    };
 
   fonts.packages = with pkgs; [
      (nerdfonts.override { fonts = [ "Hack" ]; })
