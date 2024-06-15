@@ -78,7 +78,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowBroken = true;
 
   # Enable flakes on the system
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
