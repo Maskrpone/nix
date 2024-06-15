@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 {
-	imports = [ 
-		./programs 
+	imports = [
+		./programs
 	];
 
 	home.username = "maskrpone";
@@ -19,26 +19,24 @@
 		pkgs.thefuck
 		pkgs.fzf
 		pkgs.bitwarden
+    pkgs.gcc
+    pkgs.tree-sitter
+    pkgs.nodejs
 		# (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 	];
 
 
 	home.file = {
-		alacritty = {
+		hypr = {
 			recursive = true;
-			source = dotfiles/alacritty;
-			target = "./.config/alacritty";
+			source = dotfiles/hypr;
+			target = "./.config/hypr";
 		};
-		# # Building this configuration will create a copy of 'dotfiles/screenrc' in
-		# # the Nix store. Activating the configuration will then make '~/.screenrc' a
-		# # symlink to the Nix store copy.
-		# ".screenrc".source = dotfiles/screenrc;
-
-		# # You can also set the file content immediately.
-		# ".gradle/gradle.properties".text = ''
-		#   org.gradle.console=verbose
-		#   org.gradle.daemon.idletimeout=3600000
-		# '';
+		neovim = {
+			recursive = true;
+			source = dotfiles/nvim;
+			target = "./.config/nvim";
+		};
 	};
 
 	home.sessionVariables = {

@@ -2,7 +2,7 @@
 {
 	imports = [
 		./sh.nix
-		# ./alacritty.nix
+		./alacritty.nix
 		./ags.nix
 	];
 }
