@@ -26,7 +26,7 @@
 	home.file = {
 		alacritty = {
 			recursive = true;
-			source = ./dotfiles/alacritty;
+			source = dotfiles/alacritty;
 			target = "./.config/alacritty";
 		};
 		# # Building this configuration will create a copy of 'dotfiles/screenrc' in
