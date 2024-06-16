@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if ps aux | grep ".eww-wrapped" >/dev/null; then
-	killall -q .eww-wrapped
+if ps aux | grep ".ags-wrapped" >/dev/null; then
+	killall -q .ags-wrapped
+	echo "ags detected"
 fi
-eww daemon &
-eww open bar &
+ags &

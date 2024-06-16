@@ -28,7 +28,6 @@
 		# (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 	];
 
-
 	home.file = {
 		hypr = {
 			recursive = true;

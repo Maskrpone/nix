@@ -1,18 +1,29 @@
-const _hour = Variable("", {
-  poll: [1000, 'date +"%H:%M:%S"'],
+const time = Variable("", {
+  poll: [
+    1000,
+    function () {
+      return Date().toString();
+  ],
 });
 
-const myLabel = Widget.Label({
-  label: _hour.bind(),
-});
-
-const myBar = Widget.Window({
-  name: "bar",
-  anchor: ["top", "left", "right"],
-  child: myLabel,
-});
+const Bar = (monitor) =>
+  Widget.Window({
+    monitor,
+    name: `bar${monitor}`,
+    anchor: ["top", "left", "right"],
+    exclusivity: "exclusive",
+    child: Widget.CenterBox({
+      start_widget: Widget.Label({
+        hpack: "center",
+        label: "Welcome to AGS !",
+      }),
+      end_widget: Widget.Label({
+        hpack: "center",
+        label: time.bind(),
+      }),
+    }),
+  });
 
 App.config({
-  style: "./style.css",
-  windows: [myBar],
+  windows: [Bar(0)],
 });
