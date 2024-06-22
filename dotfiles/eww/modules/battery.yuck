@@ -1,0 +1,5 @@
+(defwidget battery []
+  (box
+    :orientation "h"
+  {EWW_BATTERY["BAT0"].capacity})
+)

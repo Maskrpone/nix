@@ -1,19 +1,20 @@
-;; NOTE: This is only for 1366x768 resolution! Use at your own risk.
+(include "./modules/default.yuck")
 
-;;(include "./src/yuck/_variables.yuck")
+(defwidget bar []
+  (box
+    :class "bar"
+  (workspaces)(clock)(battery))
+)
 
-;;(include "./src/yuck/bar/_definitions.yuck")
-;;(include "./src/yuck/bar/_widgets.yuck")
-
-(defwindow example
+(defwindow bar
            :monitor 0
            :geometry (geometry :x "0%"
-                               :y "20px"
-                               :width "90%"
-                               :height "30px"
+                               :y "10px"
+                               :width "99%"
+                               :height "40px"
                                :anchor "top center")
            :stacking "fg"
            :reserve (struts :distance "40px" :side "top")
            :windowtype "dock"
            :wm-ignore false
-  "example content")
+(bar))

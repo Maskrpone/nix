@@ -1,0 +1,13 @@
+(deflisten workspaces "./modules/scripts/getWorkspaces.sh")
+
+(defwidget workspaces []
+  (box
+    :class "workspaces"
+    (for ws in {workspaces} 
+      (button 
+        (label :text {(ws.is_active == true) ? "󱨇" : "${(ws.is_occupied == true) ? "󱓻" : "󱓼"}"})
+      )
+    )
+  )
+)
+
