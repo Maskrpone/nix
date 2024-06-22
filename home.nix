@@ -12,19 +12,28 @@
 		allowBroken = true;
 	};
 
-	home.packages = [
-		pkgs.eza
-		pkgs.btop
-		pkgs.gnome.nautilus
-		pkgs.thefuck
-		pkgs.fzf
-		pkgs.bitwarden
-    pkgs.gcc
-    pkgs.tree-sitter
-    pkgs.eww
-    pkgs.nodejs
-    pkgs.python3
-    pkgs.unzip
+	home.packages = with pkgs; [
+		eza
+		btop
+		gnome.nautilus
+		thefuck
+		fzf
+		bitwarden
+    gcc
+    tree-sitter
+    eww
+    nodejs
+    python3
+    unzip
+    brightnessctl
+    obsidian
+    hyprshot
+    socat
+    signal-desktop
+    jq
+
+    burpsuite
+    kiterunner
 		# (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 	];
 

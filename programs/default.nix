@@ -5,5 +5,6 @@
 		./alacritty.nix
 		./ags.nix
     ./tmux.nix
+    # ./minecraft.nix
 	];
 }
