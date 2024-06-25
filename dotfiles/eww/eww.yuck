@@ -1,4 +1,6 @@
-(include "./modules/default.yuck")
+(include "./modules/battery.yuck")
+(include "./modules/workspaces.yuck")
+(include "./modules/clock.yuck")
 
 (defwidget bar []
   (box
@@ -10,9 +12,10 @@
            :monitor 0
            :geometry (geometry :x "0%"
                                :y "10px"
-                               :width "99%"
-                               :height "40px"
-                               :anchor "top center")
+                               :width "90%"
+                               :height "50px"
+                               :anchor "top center"
+                               :exclusive "true")
            :stacking "fg"
            :reserve (struts :distance "40px" :side "top")
            :windowtype "dock"

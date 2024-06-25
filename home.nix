@@ -1,4 +1,7 @@
 { config, pkgs, inputs, ... }:
+# let
+#   minecraft = import ./programs/minecraft.nix {inherit pkgs;};
+# in 
 {
 	imports = [
 		./programs
@@ -31,9 +34,16 @@
     socat
     signal-desktop
     jq
+    texliveFull
+    rustc
+    cargo
+    ripgrep
 
     burpsuite
     kiterunner
+    file
+    minecraft
+    evince
 		# (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 	];
 
@@ -48,6 +58,11 @@
 			source = dotfiles/nvim;
 			target = "./.config/nvim";
 		};
+    # eww = {
+    #     recursive = true;
+    #     source = dotfiles/eww;
+    #     target = "./.config/eww";
+    #   };
 	};
 
 	home.sessionVariables = {

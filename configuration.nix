@@ -44,10 +44,12 @@
     variant = "";
   };
 
-  services.displayManager.sddm = {
-  	enable = true;
-	wayland.enable = true;
-  };
+  services.xserver.displayManager.gdm.enable = true;
+
+  # services.xserver.displayManager.gdm = {
+  # 	enable = true;
+  #  wayland = true;
+  # };
 
   programs.hyprland = {
 	enable = true;
@@ -68,11 +70,11 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     	swww
-	vscode
-    	discord
-	firefox
-	alacritty
-	rofi-wayland
+      vscode
+      discord
+      firefox
+      alacritty
+      rofi-wayland
     ];
   };
 

@@ -1,13 +1,19 @@
 (deflisten workspaces "./modules/scripts/getWorkspaces.sh")
 
+
 (defwidget workspaces []
-  (box
-    :class "workspaces"
+  (eventbox :class "button workspaces"
+   (box
+    :class "ws-wrapper"
+    :space-evenly false
     (for ws in {workspaces} 
-      (button 
-        (label :text {(ws.is_active == true) ? "󱨇" : "${(ws.is_occupied == true) ? "󱓻" : "󱓼"}"})
-      )
+     (button 
+      :class "wsbtn ${(ws.is_active == true) ? "active" : "${(ws.is_occupied == true) ? "occupied" : ""}"}"
+      :onclick "hyprctl dispatch workspace ${ws.id}"
+      {(ws.is_active == true) ? "󱨇" : "${(ws.is_occupied == true) ? "󱓻" : "󱓼"}"}
+     )
     )
+   )
   )
 )
 
