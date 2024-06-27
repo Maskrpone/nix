@@ -21,6 +21,7 @@
 		gnome.nautilus
 		thefuck
 		fzf
+    git
 		bitwarden
     gcc
     tree-sitter
