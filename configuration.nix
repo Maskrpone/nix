@@ -44,19 +44,14 @@
     variant = "";
   };
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
-
-
-  # services.xserver.displayManager.gdm = {
-  # 	enable = true;
-  #  wayland = true;
-  # };
+  services.displayManager.sddm = {
+  	enable = true;
+    wayland.enable = true;
+  };
 
   programs.hyprland = {
-	enable = true;
-	xwayland.enable = true;
+	  enable = true;
+	  xwayland.enable = true;
   };
 
   # Configure console keymap
