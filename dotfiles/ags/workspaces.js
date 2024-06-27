@@ -6,34 +6,29 @@ const activeWorkspace = Variable('init', {
   listen: '/tmp/workspaces',
 })
 
-// const getWorkspaces = (ws) => {
-//   console.log("active : " + hyprland.active.workspace.);
-//   // console.log("current :" + eval())
-//   return 'test'
-// }
+function Workspaces() {
+    const activeId = hyprland.active.workspace.bind("id")
+    const workspaces = hyprland.bind("workspaces")
+        .as(ws => ws.map(({ id }) => Widget.Button({
+            on_clicked: () => hyprland.messageAsync(`dispatch workspace ${id}`),
+            child: Widget.Label(`${id}`),
+            class_name: activeId.as(i => `${i === id ? "focused" : ""}`),
+        })))
+
+    return Widget.Box({
+        class_name: "workspaces",
+        children: workspaces,
+    })
+}
 
 // const workspace = Widget.EventBox({
 //   onScrollUp: () => changeWorkspace('+1'),
 //   onScrollDown: () => changeWorkspace('-1'),
-//   child: Widget.Box({
-//     children: Array.from({ length: 10 }, (_,i) => i + 1).map(i => Widget.Button({
-//       attribute: i,
-//       // label: (i == hyprland.active.workspace.bind("name") ? "󱨇" : "󱓼",
-//       label: hyprland.active.workspace.bind('name').as(name => return (name)),
-//       // label:gcc,
-//       onClicked: () => changeWorkspace(i),
-//     })),
+//   child: Widget.Button({
+//     label: activeWorkspace.bind(),
+//     onClicked: () => console.log('Clicked'),
 //   })
-// });
-
-const workspace = Widget.EventBox({
-  onScrollUp: () => changeWorkspace('+1'),
-  onScrollDown: () => changeWorkspace('-1'),
-  child: Widget.Button({
-    label: activeWorkspace.bind(),
-    onClicked: () => console.log('Clicked'),
-  })
-})
+// })
 
 
 export { hyprland, workspace }
