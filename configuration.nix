@@ -20,6 +20,8 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  # Enable sound
+  # hardware.pulseaudio.enable = true;
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
@@ -89,6 +91,9 @@
      curl
      gnome.gnome-keyring
      psmisc
+     alsa
+     alsa-utils
+     pavucontrol
   ];
 
   services = {

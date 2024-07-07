@@ -39,6 +39,7 @@
     rustc
     cargo
     ripgrep
+    waybar
 
     burpsuite
     kiterunner

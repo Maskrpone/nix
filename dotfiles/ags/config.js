@@ -6,7 +6,7 @@ const battery = await Service.import("battery")
 const systemtray = await Service.import("systemtray")
 
 const date = Variable("", {
-    poll: [1000, 'date "+%H:%M:%S %b %e."'],
+    poll: [1000, 'date "+%H:%M %b %e."'],
 })
 
 // widgets can be only assigned as a child in one container
@@ -14,7 +14,6 @@ const date = Variable("", {
 // then you can simply instantiate one by calling it
 
 function Workspaces() {
-    
     const activeId = hyprland.active.workspace.bind("id")
     const workspaces = hyprland.bind("workspaces")
         .as(ws => ws.map(({ id }) => Widget.Button({
@@ -22,12 +21,12 @@ function Workspaces() {
             child: Widget.Label(`󱓻`),
             class_name: activeId.as(i => `${i === id ? "focused" : ""}`),
         })))
+
     return Widget.Box({
         class_name: "workspaces",
         children: workspaces,
     })
 }
-
 
 function ClientTitle() {
     return Widget.Label({
@@ -162,20 +161,20 @@ function Left() {
         spacing: 8,
         children: [
             Workspaces(),
-            ClientTitle(),
+            // ClientTitle(),
         ],
     })
 }
 
-function Center() {
-    return Widget.Box({
-        spacing: 8,
-        children: [
-            Media(),
-            // Notification(),
-        ],
-    })
-}
+// function Center() {
+//     return Widget.Box({
+//         spacing: 8,
+//         children: [
+//             Media(),
+//             Notification(),
+//         ],
+//     })
+// }
 
 function Right() {
     return Widget.Box({
@@ -199,7 +198,7 @@ function Bar(monitor = 0) {
         exclusivity: "exclusive",
         child: Widget.CenterBox({
             start_widget: Left(),
-            center_widget: Center(),
+            // center_widget: Center(),
             end_widget: Right(),
         }),
     })
